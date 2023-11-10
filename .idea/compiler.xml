@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="minikube-internal-gateway" />
+        <module name="minikube-external-gateway" />
+        <module name="minikube-demo2" />
+        <module name="minikube-demo" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="minikube-demo (1) (org.example)" target="11" />
+      <module name="minikube-demo (2) (org.example.demo)" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="minikube-demo" options="-parameters" />
+      <module name="minikube-demo (1) (org.example)" options="-parameters" />
+      <module name="minikube-demo2" options="-parameters" />
+      <module name="minikube-external-gateway" options="-parameters" />
+      <module name="minikube-internal-gateway" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,23 @@
+server:
+  port: 8081
+  connection-timeout: 20000
+management:
+  endpoint:
+    restart:
+      enabled: true
+    health:
+      enabled: true
+    info:
+      enabled: true
+  health:
+    redis:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: 'health,refresh,info'
+
+spring:
+  application:
+    name: minikube-demo
+
