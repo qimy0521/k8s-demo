@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: k8s-demo
+  namespace: k8s-demo
+  annotations:
+    nginx.org/websocket-services: "cos-power-external-gateway"
+    nginx.org/client-max-body-size: "1024M"
+spec:
+  rules:
+  - host: www.k8s-demo.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: k8s-demow
+          servicePort: 8081
