@@ -29,13 +29,9 @@ spec:
       labels:
         app: minikube-demo
     spec:
-      hostAliases:
-        - ip: "10.12.54.1"
-          hostnames:
-            - "www.gxcospower.cn"
       containers:
-        - name: deploy-pod-name
-          image: repo.gydev.cn:8082/cos-power/deploy-pod-name:image-version
+        - name: k8s-demo
+          image: k8s-demo:1.0.0
           resources:
             limits:
               memory: "200Mi"
