@@ -1,0 +1,36 @@
+server:
+  port: 8081
+  netty:
+    connection-timeout: 10000
+    idle-timeout: 20000
+spring:
+  application:
+    name: minikube-external-gateway
+  cloud:
+    gateway:
+      httpclient:
+        connect-timeout: 2000
+        response-timeout: PT30S
+        pool:
+          type: fixed
+          max-connections: 500
+          max-idle-time: 10000
+          acquire-timeout: 10000
+          eviction-interval: PT30S
+      predicate:
+        weight:
+          enabled: false
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      routes:
+        - id: minikube-demo
+          uri: http://minikube-demo:8082
+          order: 1
+          predicates:
+            - name: Path
+              args:
+                _genkey_0: /v1/minikube/demo/get
+          filters:
+            - StripPrefix=2

@@ -1,0 +1,6 @@
+server:
+  port: 8081
+  connection-timeout: 20000
+spring:
+  application:
+    name: minikube-demo

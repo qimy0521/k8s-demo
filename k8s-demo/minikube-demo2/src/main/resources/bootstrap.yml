@@ -1,0 +1,19 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    kubernetes:
+      reload:
+        enabled: true
+        mode: polling
+        period: 10000
+        strategy: REFRESH
+        monitoring-config-maps: true
+        monitoring-secrets: true
+      config:
+        sources:
+          - name: minikube-demo-configmap
+      secrets:
+        enabled: true
+        enable-api: true
+        name: minikube-demo-secret
